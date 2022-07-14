@@ -1,5 +1,5 @@
 function Tempo(props) {
-    const dynamicDate = new Date;
+    const dynamicDate = new Date();
     const dynamicStringDate = dynamicDate.toGMTString();
     return (
         <div>
@@ -10,13 +10,14 @@ function Tempo(props) {
 }
 
 export function getStaticProps() {
-    const staticDate = new Date;
+    const staticDate = new Date();
     const staticStringDate = staticDate.toGMTString();
 
     return {
         props: {
             staticStringDate
-        }
+        },
+        revalidate: 1
     }
 }
 
